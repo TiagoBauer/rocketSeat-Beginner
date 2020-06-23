@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Course</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" name="name" id="name" class="name">
+        <input type="text" name="name" id="name2">
+        <button class="button" onmouseover="showAlert()" id="testBtn">Press me</button>
+        <div class="box"></div>
+    </div>
+
+    <hr>
+
+
+
+    <script>
+        function showAlert() {
+            console.log("Hello! Mouse passed over here!")
+        }
+
+        //Get by ID
+        var inputElement = document.getElementById("name");
+        console.log(inputElement);
+
+        /*Get by Name (This return a array of elements
+        this means that you can indicate the index for
+        the return)
+        Ex.: inputElement = document.getElementsByName("name")[0];*/
+        inputElement = document.getElementsByName("name");
+        console.log(inputElement);
+
+        /*Get by Class (This return a array of elements
+        this means that you can indicate the index for
+        the return)
+        Ex.: inputElement = document.getElementsByClassName("name")[0];*/
+        inputElement = document.getElementsByClassName("name");
+        console.log(inputElement);
+
+
+        //Query Selector
+        //this option allow you to "walk" you DOM object
+        //you may find objects by appling a logical sentence 
+        //like the examples right below.
+        //The query selector will always return only one element. To remove all you must use .querySelectorAll
+        inputElement = document.querySelector("input[name=name]");
+        console.log(inputElement);
+
+        let btnElement = document.querySelector("button[id=testBtn]");
+        btnElement.onclick = function() {
+            let txt = inputElement.value;
+            alert(txt);
+        }
+
+        //Creating a element by code
+        let linkElement = document.createElement('a');
+        linkElement.setAttribute('href', 'https://rocketseat.com.br');
+
+        let textElement = document.createTextNode("Acessar site rocket seat!");
+        linkElement.appendChild(textElement);
+
+        let containerElement = document.getElementById("app");
+        containerElement.appendChild(linkElement);
+
+        //Alternating a CSS with JS
+        let boxElement = document.querySelector(".box");
+
+        boxElement.style.width = 100;
+        boxElement.style.height = 100;
+        boxElement.style.backgroundColor = '#f00';
+    </script>
+</body>
+
+</html>
