@@ -1,0 +1,36 @@
+<!--This exercise has the goal of generate red cubes everytime a button is pressed-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube generator</title>
+</head>
+
+<body>
+    <div class="cubes">
+        <button onclick="generateCube()">Create a beautiful red cube</button>
+    </div>
+
+
+    <script>
+        function generateCube() {
+            //A var to adquire the div element and 2 other to create a div for cube and a breakline
+            let masterDiv = document.querySelector(".cubes");
+            let cube = document.createElement("div");
+            let breakLine = document.createElement("br");
+
+            //Cube especifications
+            cube.style.width = '100px';
+            cube.style.height = '100px';
+            cube.style.backgroundColor = '#f00';
+
+            //Generate the cube
+            masterDiv.appendChild(cube);
+            masterDiv.appendChild(breakLine);
+        }
+    </script>
+</body>
+
+</html>
