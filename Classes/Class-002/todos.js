@@ -1,3 +1,4 @@
+//Creating the JSON to generate new ToDo itens
 function test(){
     console.log("Test JS");
 }
